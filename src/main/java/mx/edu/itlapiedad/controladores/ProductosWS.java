@@ -41,4 +41,17 @@ import org.springframework.web.bind.annotation.*;
 			}
 			return new ResponseEntity<Productos>(resultado,HttpStatus.OK);
 		}
+		
+		@PostMapping()
+		public ResponseEntity<?>insertar(@RequestBody Productos productos){
+			Productos resultado;
+		try {
+			resultado=servicio.insertar(productos);
+			
+		} catch (DataAccessException e) {
+		return new ResponseEntity<>(HttpStatus.CONFLICT);
+		}	
+			return new ResponseEntity<Productos>(resultado,HttpStatus.CREATED);
+		
+		}
 }

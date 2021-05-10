@@ -25,4 +25,10 @@ public class ProductosLogic implements ProductosService {
 		// TODO Auto-generated method stub
 		return repositorio.buscar(id);
 	}
+	
+	@Override
+	public Productos insertar(Productos productos) {
+		
+		return repositorio.insertar(productos);
+	}
 }

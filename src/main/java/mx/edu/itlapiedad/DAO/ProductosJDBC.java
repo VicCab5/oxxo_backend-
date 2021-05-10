@@ -57,4 +57,21 @@ import mx.edu.itlapiedad.models.Productos;
 				
 			},id);
 		}
+		
+		@Override
+		public Productos insertar(Productos productos) {
+			
+			SimpleJdbcInsert insert=new SimpleJdbcInsert(conexion).withTableName("productos")
+					.usingColumns("descripcion","precio","codigo_barras","existencia")
+					.usingGeneratedKeyColumns("id");
+			Map<String,Object> datos = new HashMap<>();
+			datos.put("descripcion", productos.getDescripcion());
+		         datos.put("precio", productos.getPrecio());
+		datos.put("codigo_barras", productos.getCodigo_barras());
+		datos.put("existencia", productos.getExistencia());
+			
+			Number id=insert.executeAndReturnKey(datos);
+			productos.setId(id.intValue());
+			return productos;
+		}
 }
