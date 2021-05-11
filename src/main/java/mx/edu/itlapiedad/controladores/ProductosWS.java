@@ -49,6 +49,7 @@ import org.springframework.web.bind.annotation.*;
 			resultado=servicio.insertar(productos);
 			
 		} catch (DataAccessException e) {
+			System.out.println(e);
 		return new ResponseEntity<>(HttpStatus.CONFLICT);
 		}	
 			return new ResponseEntity<Productos>(resultado,HttpStatus.CREATED);

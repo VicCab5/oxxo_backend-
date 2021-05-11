@@ -65,8 +65,8 @@ import mx.edu.itlapiedad.models.Productos;
 					.usingColumns("descripcion","precio","codigo_barras","existencia")
 					.usingGeneratedKeyColumns("id");
 			Map<String,Object> datos = new HashMap<>();
-			datos.put("descripcion", productos.getDescripcion());
-		         datos.put("precio", productos.getPrecio());
+		datos.put("descripcion", productos.getDescripcion());
+		datos.put("precio", productos.getPrecio());
 		datos.put("codigo_barras", productos.getCodigo_barras());
 		datos.put("existencia", productos.getExistencia());
 			
