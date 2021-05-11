@@ -21,7 +21,7 @@ public class Productos {
 		return descripcion;
 	}
 	public void setDescripcion(String descripcion) {
-		
+		this.descripcion = descripcion;
 	}
 	public float getPrecio() {
 		return precio;

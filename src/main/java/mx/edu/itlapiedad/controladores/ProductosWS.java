@@ -42,7 +42,7 @@ import org.springframework.web.bind.annotation.*;
 			return new ResponseEntity<Productos>(resultado,HttpStatus.OK);
 		}
 		
-		@PostMapping()
+		@PostMapping("")
 		public ResponseEntity<?>insertar(@RequestBody Productos productos){
 			Productos resultado;
 		try {
