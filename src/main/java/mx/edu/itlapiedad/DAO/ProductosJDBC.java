@@ -74,4 +74,21 @@ import mx.edu.itlapiedad.models.Productos;
 			productos.setId(id.intValue());
 			return productos;
 		}
+		
+		@Override
+		public void actualizar(Productos productos) {
+			String sql_update = "UPDATE productos SET descripcion=?,"
+					+ "existencia=?,precio=?,codigo_barras=?"
+					+ "WHERE id=?";
+			conexion.update(sql_update,productos.getDescripcion(),
+					productos.getExistencia(),
+					productos.getPrecio(),
+					productos.getCodigo_barras(),
+					productos.getId());
+			
+		}
+		
+		
+
+
 }

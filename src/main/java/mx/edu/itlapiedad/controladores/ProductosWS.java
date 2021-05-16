@@ -55,4 +55,19 @@ import org.springframework.web.bind.annotation.*;
 			return new ResponseEntity<Productos>(resultado,HttpStatus.CREATED);
 		
 		}
+		
+		
+		//Metodo de actualizar 
+				@PutMapping()
+				public ResponseEntity<?> actualizar(@RequestBody Productos productos){
+				try {
+						servicio.actualizar(productos);
+					} catch (DataAccessException e) {
+						System.out.println(e);
+					return new ResponseEntity<>(HttpStatus.CONFLICT);
+					}
+				
+					return new ResponseEntity<>(HttpStatus.CREATED);
+					}
+
 }

@@ -31,4 +31,12 @@ public class ProductosLogic implements ProductosService {
 		
 		return repositorio.insertar(productos);
 	}
+	
+	@Override
+	public void actualizar(Productos  productos) {
+		
+		repositorio.actualizar(productos);
+	}
+	
+
 }
