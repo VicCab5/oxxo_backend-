@@ -38,5 +38,11 @@ public class ProductosLogic implements ProductosService {
 		repositorio.actualizar(productos);
 	}
 	
+	@Override
+	public void eliminar(int id) {
+		
+		repositorio.eliminar(id);
+	}
+
 
 }

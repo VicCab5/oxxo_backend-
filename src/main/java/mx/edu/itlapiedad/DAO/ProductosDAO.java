@@ -13,5 +13,7 @@ public interface ProductosDAO {
 	Productos insertar(Productos productos);
 
 	void actualizar(Productos productos);
+
+	void eliminar(int id);
 	
 }

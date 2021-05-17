@@ -70,4 +70,20 @@ import org.springframework.web.bind.annotation.*;
 					return new ResponseEntity<>(HttpStatus.CREATED);
 					}
 
+				
+				@DeleteMapping("/{id}")
+				public ResponseEntity<?>eliminarProducto(@PathVariable int id){
+					
+			
+					try {
+						servicio.eliminar(id);
+					}catch(DataAccessException e) {
+						
+						return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+						
+					}
+					
+					return new ResponseEntity<Productos>(HttpStatus.OK);
+					
+				}
 }

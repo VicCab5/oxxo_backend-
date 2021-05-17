@@ -88,6 +88,13 @@ import mx.edu.itlapiedad.models.Productos;
 			
 		}
 		
+		@Override
+		public void eliminar(int id) {
+			String sql_update="UPDATE productos SET activo=0 WHERE id=?";
+			conexion.update(sql_update,id);
+			
+		}
+		
 		
 
 

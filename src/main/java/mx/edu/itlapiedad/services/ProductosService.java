@@ -13,4 +13,6 @@ public interface ProductosService {
 	
 	void actualizar(Productos productos);
 	
+	void eliminar(int id);
+	
 }
