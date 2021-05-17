@@ -11,10 +11,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
-import mx.edu.itlapiedad.models.Productos;
+
 import mx.edu.itlapiedad.models.Tickets_renglones;
 
-public class Tickets_renglonesJDBC {
+public class Tickets_renglonesJDBC implements Tickets_renglonesDAO{
 	@Autowired
 	JdbcTemplate conexion;
 	
