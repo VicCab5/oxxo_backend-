@@ -8,4 +8,7 @@ public interface ticketsService {
 List<tickets> consultarTickets();
 tickets buscar(int id);
 tickets insertar (tickets tickets);
+void actualizar(tickets tickets);
+
+void eliminar(int id);
 }

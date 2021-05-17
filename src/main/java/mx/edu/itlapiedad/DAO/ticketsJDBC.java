@@ -64,6 +64,25 @@ public class ticketsJDBC implements ticketsDAO{
 		tickets.setId(id.intValue());
 		return tickets;
 	}
+	
+	@Override
+	public void actualizar(tickets tickets) {
+		String sql_update = "UPDATE tickets SET fecha_hora = ?, total = ?, "
+				+ "CAJERO_id = ? WHERE id = ?";
+		conexion.update(sql_update, 
+				tickets.getFecha_hora(),
+				tickets.getTotal(),
+				tickets.getCAJERO_id(),
+				tickets.getId());
+			}
+	
+	
+	@Override
+	public void eliminar(int id) {
+		String sql_update="UPDATE cajeros SET activo=0 WHERE id=?";
+		conexion.update(sql_update,id);
+		
+	}
 
 
 }

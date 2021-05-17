@@ -29,4 +29,16 @@ public class ticketsLogic implements ticketsService{
 		
 		return repositorio.insertar(tickets);
 	}
+	
+	@Override
+	public void actualizar(tickets tickets) {
+		 repositorio.actualizar(tickets);
+		
+	}
+
+	@Override
+	public void eliminar(int id) {
+		repositorio.eliminar(id);
+		
+	}
 }
