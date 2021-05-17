@@ -9,7 +9,6 @@ import mx.edu.itlapiedad.DAO.*;
 import mx.edu.itlapiedad.models.Productos;
 
 @Service
-
 public class ProductosLogic implements ProductosService {
 	
     @Autowired
@@ -17,7 +16,6 @@ public class ProductosLogic implements ProductosService {
 	
 	@Override
 	public List<Productos> consultarProductos() {
-
 		return repositorio.consultarProductos();
 	}
 	@Override

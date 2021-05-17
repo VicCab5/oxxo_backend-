@@ -1,5 +1,4 @@
 package mx.edu.itlapiedad.controladores;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
