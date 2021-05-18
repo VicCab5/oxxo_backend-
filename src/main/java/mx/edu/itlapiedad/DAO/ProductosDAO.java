@@ -11,13 +11,11 @@ public interface ProductosDAO {
 	Productos buscar(int id);
 	
 	Productos insertar(Productos productos);
-<<<<<<< Updated upstream
+
 
 	void actualizar(Productos productos);
 
 	void eliminar(int id);
 	
 }
-=======
-}
->>>>>>> Stashed changes
+
