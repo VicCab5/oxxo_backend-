@@ -14,39 +14,29 @@ public class Tickets_renglonesLogic implements Tickets_renglonesService {
 	
     @Autowired
     Tickets_renglonesDAO repositorio;
-	
 
 	@Override
 	public List<Tickets_renglones> consultarTickets_renglones() {
-
 		return repositorio.consultarTickets_renglones();
 	}
 
 	@Override
-	public Tickets_renglones buscarTickets_renglones(int id) {
-		
-		return repositorio.buscarTickets_renglones(id);
-	}
-	
-	
-	
-	@Override
-	public Tickets_renglones insertar(Tickets_renglones TR) {
-		
-		return repositorio.insertarTickets_renglones(TR);
+	public Tickets_renglones buscar(int id) {
+		return repositorio.buscar(id);
 	}
 	
 	@Override
-	public void actualizarTickets_renglones(Tickets_renglones  TR) {
-		
-		repositorio.actualizarTickets_renglones(TR);
+	public Tickets_renglones insertar(Tickets_renglones Tickets_renglones) {
+		return repositorio.insertar(Tickets_renglones);
+	}
+	
+	@Override
+	public void actualizar(Tickets_renglones  Tickets_renglones) {
+		repositorio.actualizar(Tickets_renglones);
 	}
 
 	@Override
-	public Tickets_renglones insertarTickets_renglones(Tickets_renglones TR) {
-		
-		return null;
+	public void eliminar(int id) {
+		repositorio.eliminar(id);
 	}
-	
-
 }
