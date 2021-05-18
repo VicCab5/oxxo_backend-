@@ -20,5 +20,7 @@ public interface Tickets_renglonesService {
 	Tickets_renglones insertarTickets_renglones(Tickets_renglones TR);
 	
 	void actualizarTickets_renglones(Tickets_renglones TR);
+
+	Tickets_renglones insertar(Tickets_renglones TR);
 	
 }

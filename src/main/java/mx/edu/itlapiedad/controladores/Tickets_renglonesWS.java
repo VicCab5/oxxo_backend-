@@ -11,13 +11,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import mx.edu.itlapiedad.models.Tickets_renglones;
-
 import mx.edu.itlapiedad.services.Tickets_renglonesService;
 
+@RestController
+@RequestMapping("/devops/Tickets_renglones")
 public class Tickets_renglonesWS {
+	
 	@Autowired
 	Tickets_renglonesService servicio;
 
