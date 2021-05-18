@@ -30,6 +30,7 @@ public class Tickets_renglonesWS {
 		try {
 			resultado = servicio.consultarTickets_renglones();
 		}catch (DataAccessException e) {
+			System.out.println(e);
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		return new ResponseEntity<List<Tickets_renglones>>(resultado,HttpStatus.OK);
@@ -40,6 +41,7 @@ public class Tickets_renglonesWS {
 		try {
 			resultado=servicio.buscarTickets_renglones(id);
 		} catch (DataAccessException e) {
+			System.out.println(e);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		return new ResponseEntity<Tickets_renglones>(resultado,HttpStatus.OK);

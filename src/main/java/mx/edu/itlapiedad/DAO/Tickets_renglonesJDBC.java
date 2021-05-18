@@ -23,7 +23,7 @@ public class Tickets_renglonesJDBC implements Tickets_renglonesDAO{
 	
 	@Override
 	public List<Tickets_renglones> consultarTickets_renglones() {
-		String sql_query = "SELECT * FROM tickets_renglones";
+		String sql_query = "SELECT * FROM ticket_renglones";
 		return conexion.query(sql_query, new RowMapper<Tickets_renglones>() {
 			public Tickets_renglones mapRow(ResultSet rs,int rowNum) throws SQLException {
 				Tickets_renglones TR = new Tickets_renglones();
@@ -43,7 +43,7 @@ public class Tickets_renglonesJDBC implements Tickets_renglonesDAO{
 	
 	@Override
 	public Tickets_renglones buscarTickets_renglones(int id) {
-		String sql_query = "SELECT * FROM Tickets_renglones WHERE id=?";
+		String sql_query = "SELECT * FROM ticket_renglones WHERE id=?";
 		return conexion.queryForObject(sql_query, new RowMapper<Tickets_renglones>() {
 			public Tickets_renglones mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Tickets_renglones TR = new Tickets_renglones();
@@ -63,7 +63,7 @@ public class Tickets_renglonesJDBC implements Tickets_renglonesDAO{
 	@Override
 	public Tickets_renglones insertarTickets_renglones(Tickets_renglones TR) {
 		
-		SimpleJdbcInsert insert=new SimpleJdbcInsert(conexion).withTableName("Tickets_renglones")
+		SimpleJdbcInsert insert=new SimpleJdbcInsert(conexion).withTableName("ticket_renglones")
 				.usingColumns("cantidad","precio","importe")
 				.usingGeneratedKeyColumns("id");
 		Map<String,Object> datos = new HashMap<>();
@@ -80,9 +80,9 @@ public class Tickets_renglonesJDBC implements Tickets_renglonesDAO{
 	
 	@Override
 	public void actualizarTickets_renglones(Tickets_renglones TR) {
-		String sql_update = "UPDATE productos SET cantidad=?,"
+		String sql_update = "UPDATE ticket_renglones SET cantidad=?,"
 				+ "precio=?, importe=?"
-				+ "WHERE id=?";
+				+ " WHERE id=?";
 		conexion.update(sql_update,TR.getCantidad(),
 				TR.getPrecio(),
 				TR.getImporte());
