@@ -22,13 +22,12 @@ public class CajerosJDBC implements CajerosDAO{
 	
 	@Override
     public List<Cajeros> consultarClientes() {
-		String sql_query = "SELECT * FROM cajeros WHERE activo=1";
+		String sql_query = "SELECT * FROM cajeros";
 		return conexion.query(sql_query, new RowMapper<Cajeros>() {
 			public Cajeros mapRow(ResultSet rs,int rowNum) throws SQLException {
 				Cajeros cajeros = new Cajeros();
 				cajeros.setId(rs.getInt("id"));
 				cajeros.setNombre(rs.getString("nombre"));
-				cajeros.setActivo(rs.getInt("activo"));
 				return cajeros;
 				
 			}
@@ -46,7 +45,6 @@ public class CajerosJDBC implements CajerosDAO{
 				Cajeros cajeros = new Cajeros();
 				cajeros.setId(rs.getInt("id"));
 				cajeros.setNombre(rs.getString("nombre"));
-				cajeros.setActivo(rs.getInt("activo"));
 				return cajeros;
 			}
 			
@@ -64,7 +62,6 @@ public class CajerosJDBC implements CajerosDAO{
 		
 		Number id = insert.executeAndReturnKey(datos);
 		cajeros.setId(id.intValue());
-		cajeros.setActivo(1);
 		return cajeros;
 	}
 	
@@ -81,7 +78,7 @@ public class CajerosJDBC implements CajerosDAO{
 	
 	@Override
 	public void eliminar(int id) {
-		String sql_update="UPDATE cajeros SET activo=0 WHERE id=?";
+		String sql_update="delete from cajeros WHERE id=?";
 		conexion.update(sql_update,id);
 		
 	}
