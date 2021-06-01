@@ -26,5 +26,5 @@ jobs:
     - name: Subir .jar
       uses: actions/upload-artifact@v1
       with:
-         name: backend
-         path: backend/target/backend-0.0.1.jar
+         name: oxxo_backendclon
+         path: backend/target/oxxo_backend-0.0.1.jar
