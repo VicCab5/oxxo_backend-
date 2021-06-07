@@ -1,7 +1,9 @@
 package mx.edu.itlapiedad.DAO;
 
+
 import java.util.List;
 
+import mx.edu.itlapiedad.models.Ticket_renglones_importe;
 import mx.edu.itlapiedad.models.Tickets_renglones;
 
 public interface Tickets_renglonesDAO {
@@ -14,4 +16,7 @@ public interface Tickets_renglonesDAO {
 	void actualizar(Tickets_renglones Tickets_renglones);
 	
 	void eliminar(int id);
+	List<Ticket_renglones_importe> buscar_importe_cajero(int id);
+
+	
 }

@@ -1,13 +1,17 @@
 package mx.edu.itlapiedad.services;
 
+
 import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+
 import mx.edu.itlapiedad.DAO.Tickets_renglonesDAO;
 import mx.edu.itlapiedad.models.Tickets_renglones;
+import mx.edu.itlapiedad.models.Ticket_renglones_importe;
 
 @Service
 public class Tickets_renglonesLogic implements Tickets_renglonesService {
@@ -39,4 +43,14 @@ public class Tickets_renglonesLogic implements Tickets_renglonesService {
 	public void eliminar(int id) {
 		repositorio.eliminar(id);
 	}
+	@Override
+	public List<Ticket_renglones_importe> buscar_importe_cajero(int id) {
+		// TODO Auto-generated method stub
+		return repositorio.buscar_importe_cajero(id);
+	}
+
+	
+
+	
+
 }
