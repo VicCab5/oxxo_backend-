@@ -1,6 +1,7 @@
 package mx.edu.itlapiedad.services;
 
 
+import java.sql.Timestamp;
 import java.util.List;
 
 
@@ -47,6 +48,12 @@ public class Tickets_renglonesLogic implements Tickets_renglonesService {
 	public List<Ticket_renglones_importe> buscar_importe_cajero(int id) {
 		// TODO Auto-generated method stub
 		return repositorio.buscar_importe_cajero(id);
+	}
+	
+	@Override
+	public List<Ticket_renglones_importe> buscar_importe_cajero_fecha(int id, Timestamp fecha_hora) {
+		// TODO Auto-generated method stub
+		return repositorio.buscar_importe_cajero_fecha(id,fecha_hora);
 	}
 
 	

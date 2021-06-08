@@ -1,6 +1,7 @@
 package mx.edu.itlapiedad.DAO;
 
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import mx.edu.itlapiedad.models.Ticket_renglones_importe;
@@ -17,6 +18,8 @@ public interface Tickets_renglonesDAO {
 	
 	void eliminar(int id);
 	List<Ticket_renglones_importe> buscar_importe_cajero(int id);
+
+	List<Ticket_renglones_importe> buscar_importe_cajero_fecha(int id, Timestamp fecha_hora);
 
 	
 }

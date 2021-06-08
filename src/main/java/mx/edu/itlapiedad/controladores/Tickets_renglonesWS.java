@@ -1,6 +1,7 @@
 package mx.edu.itlapiedad.controladores;
 
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import mx.edu.itlapiedad.models.Ticket_renglones_importe;
@@ -95,5 +96,18 @@ public class Tickets_renglonesWS {
 		return new ResponseEntity<List<Ticket_renglones_importe>>(resultado, HttpStatus.OK);
 	}
 	
+	
+	@GetMapping("/importe_cajero/{id}/fecha")
+	public ResponseEntity<?> buscar_importe_cajero_fecha(@PathVariable int id, @RequestParam Timestamp fecha_hora) {
+		List<Ticket_renglones_importe> resultado;
+		try {
+			resultado = servicio.buscar_importe_cajero_fecha(id,fecha_hora);
+		} catch (DataAccessException e) {
+			System.out.println(e);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<List<Ticket_renglones_importe>>(resultado, HttpStatus.OK);
+	}
+
 
 }
